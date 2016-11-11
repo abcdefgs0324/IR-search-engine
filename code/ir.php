@@ -1,15 +1,15 @@
 ﻿<?php
 $keyword=trim($_POST["keyword"]);
-$input = fopen("IR/query.txt" , "w");
+$input = fopen("../temp/query.txt" , "w");
 fwrite($input , $keyword);
 fclose($input);
-$pyscript = 'C:\\AppServ\\www\\IR\\search.py';
+$pyscript = './search.py';
 $python = 'C:\\Python27\\python.exe';
 
 $cmd = "$python $pyscript";
 exec("$cmd" , $output);
 
-$file = fopen("output.txt" , "r");
+$file = fopen("../temp/output.txt" , "r");
 $str = "";
 while (!feof($file)) {
             $str .= fgets($file);
@@ -31,7 +31,7 @@ while (!feof($file)) {
         {
             $count++;
             $topic = "";
-            $temp = fopen("IR/articles_transfer/$tok_str.txt" , "r");
+            $temp = fopen("../articles/$tok_str.txt" , "r");
             $topic = fgets($temp);
             echo ("<font size=\"5\" </font><a  href=\"/IR/articles_transfer/$tok_str.txt  \"target=\"_self\">$count. $topic<br></a>");
             $snippet = fgets($temp);
