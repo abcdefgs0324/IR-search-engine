@@ -1,11 +1,11 @@
-#Chinese Documents Search Engine, IR 2015 Fall
+# Chinese Documents Search Engine, IR 2015 Fall
 
-##呼叫程式
-`$ python search.py`<br>
+## 呼叫程式
+` $ python search.py `<br>
 (with python2.7)<br>
 <br>
 
-##功能
+## 功能
 - 單詞搜尋
     - 回傳"@文件id@文件id$總次數"
     - ranking by 該詞彙於該篇文章出現次數
@@ -21,12 +21,12 @@
     - no ranking
 <br>
 
-##使用文件
+## 使用文件
 - PositionalList.txt
     - 中文詞#文章ID$次數&位置-位置-位置#文章ID$次數&位置-位置-位置...@總次數
 <br>
 
-##處理過程
+## 處理過程
 1.  將query字串存進"temp/query.txt"檔
 
     ex. 搜尋 "傳統 and not 表演 or 先生"，query.txt內容為 "傳統 and not 表演 or 先生"
@@ -36,7 +36,7 @@
     ex. 結果格式: @文章@文章@文章
 <br>
 
-##Processing
+## Processing
 - 文章標題依日期改為id由小到大放入articles
 - TDmatrix.txt
     - 首行(文件id)： 1,2,3,4,5,6,7,8,9, ... ,1200<br>
